@@ -1,3 +1,6 @@
+DROP TABLE [process].[PipelineParameter];
+GO
+
 CREATE TABLE [process].[PipelineParameter](
 	[PipelineParameterId] [int] IDENTITY(1,1) NOT NULL,
 	[PipelineName] [nvarchar](200) NOT NULL,
@@ -5,16 +8,16 @@ CREATE TABLE [process].[PipelineParameter](
 	[DstConnectionId] [int] NOT NULL,
 	[IsActive] [bit] NOT NULL,
 	[FileSystem] [nvarchar](100) NOT NULL,
-	[FolderPath] [nvarchar](100) NOT NULL,
+	[Directory] [nvarchar](100) NOT NULL,
 	[FileName] [nvarchar](100) NOT NULL,
 	[SchemaName] [nvarchar](50) NOT NULL,
 	[TableName] [nvarchar](50) NOT NULL,
-	[columnDelimiter] [nvarchar](10) NULL,
-	[rowDelimiter] [nvarchar](10) NULL,
-	[encoding] [nvarchar](10) NULL,
-	[quoteCharacter] [nvarchar](10) NULL,
-	[escapeChar] [nvarchar](10) NULL,
-	[firstRowAsHeader] [bit] NULL,
+	[ColumnDelimiter] [nvarchar](10) NULL,
+	[RowDelimiter] [nvarchar](10) NULL,
+	[Encoding] [nvarchar](10) NULL,
+	[QuoteCharacter] [nvarchar](10) NULL,
+	[EscapeCharacter] [nvarchar](10) NULL,
+	[FirstRowAsHeader] [bit] NULL,
  CONSTRAINT [PK_PipelineParameter] PRIMARY KEY CLUSTERED 
 (
 	[PipelineParameterId] ASC
